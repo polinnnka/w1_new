@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная №1</title>
+    <script src="script.js" defer></script>
+    <style>
+        body{
+            font-family: Arial;
+
+        }
+        .header{
+            font-family: Arial;
+            font-size: 26px;
+            text-align: right;
+        }
+        #header_id {
+            font-family: cursive;
+            color: #320082;
+            font-size: 26px;
+            text-align: center;
+        }
+        .mainTable{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .mainTable, .mainTable th, .mainTable td {
+            border: 1px solid black;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .image{
+            width: 100%;
+            max-width: 500px;
+        }
+        .image_cell {
+            text-align: center;
+        }
+        .coordinates div {
+            margin-bottom: 5%;
+        }
+        .x-btn {
+            padding: 5px;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .x-btn.active {
+            background-color: #320082;
+            border-color: #320082;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="mainTable">
+        <tr>
+            <td class="header" id="header_id" colspan="2">
+                <h3>Щербакова Полина, группа P3132, вариант 1234</h3>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="image_cell">
+                <img src="gr.png" alt="График области" class="image" />
+            </td>
+            <td>
+                <h3>Ввод параметров:</h3>
+                <form class="coordinates" id="coordinates">
+                    <div>
+                        <label>X:</label>
+                        <div id="X-buttons">
+                            <input type="button" id="x-2" class="x-btn" name="X" value="-2">
+                            <input type="button" id="x-1.5" class="x-btn" name="X" value="-1.5">
+                            <input type="button" id="x-1" class="x-btn" name="X" value="-1">
+                            <input type="button" id="x-0.5" class="x-btn" name="X" value="-0.5">
+                            <input type="button" id="x-0" class="x-btn" name="X" value="0">
+                            <input type="button" id="x-0.5-pos" class="x-btn" name="X" value="0.5">
+                            <input type="button" id="x-1-pos" class="x-btn" name="X" value="1">
+                            <input type="button" id="x-1.5-pos" class="x-btn" name="X" value="1.5">
+                            <input type="button" id="x-2-pos" class="x-btn" name="X" value="2">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Y:</label>
+                        <input type="text" name="Y" id="getY" placeholder="Введите Y от -5 до 5">
+                    </div>
+                    <div>
+                        <label>R:</label>
+                        <div id="R-buttons">
+                            <label><input type="radio" name="R" value="1"> 1</label>
+                            <label><input type="radio" name="R" value="2"> 2</label>
+                            <label><input type="radio" name="R" value="3"> 3</label>
+                            <label><input type="radio" name="R" value="4"> 4</label>
+                            <label><input type="radio" name="R" value="5"> 5</label>
+                        </div>
+                    </div>
+                    <button type="submit" id="submit-btn">Отправить</button>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <h3>Таблица результатов</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Результат</th>
+                            <th>Время</th>
+                            <th>Время работы</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="output"></tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
